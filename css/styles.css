@@ -25,8 +25,8 @@ body::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    height: 100dvh;
+    background-attachment: fixed; /* Ensure fixed background on desktop */
+    height: 100vh;
     width: 100%;
     z-index: 0;
     pointer-events: none;
@@ -135,8 +135,9 @@ footer a {
 
 @media (max-aspect-ratio: 3/4), (hover: none) and (pointer: coarse) {
     body::before {
-        height: 100dvh; /*dvh help prevent mobile browser resizing to mess things up when scrolling*/
-        background-position: center top;
+        background-image: none;
+        background-color: var(--light-navy-band);
+        height: 100vh;
     }
 
     body::after {
