@@ -22,8 +22,7 @@ body::before {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
     background: rgba(0, 0, 0, 0.25);
     pointer-events: none;
     z-index: 0;
@@ -57,7 +56,7 @@ body {
     font-weight: 100;
     font-size: 3.5rem;
     font-family: "Whisper", cursive;
-    margin: 0.5rem 0.5rem;
+    margin: 1rem 1rem;
 }
 
 .social-media img{
@@ -86,10 +85,9 @@ body {
 }
 
 .home-logo img {
-    width: 45rem;
+    width: min(45rem, 90vw);
     height: auto;
-    max-width: 100vw;
-    max-height: auto; 
+    max-width: 100%;
     margin: 1rem 0;
 }
 
@@ -112,4 +110,26 @@ footer a {
     color: var(--text-band);
     text-decoration: none;
     font-weight: bold;
+}
+
+@media (max-aspect-ratio: 3/4), (hover: none) and (pointer: coarse) {
+    body {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    body::before {
+        inset: 0;
+    }
+
+    .home-logo img {
+        width: 85vw;
+    }
+
+    .name {
+        font-size: 2.5rem;
+    }
+    .home-text h1, .home-text h2 {
+        font-size: 1.5rem;
+    }
 }
