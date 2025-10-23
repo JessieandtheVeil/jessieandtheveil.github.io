@@ -20,22 +20,36 @@
 body::before {
     content: "";
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
+    background-image: url('../images/jess-hand.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 100dvh;
+    width: 100%;
+    z-index: 0;
+    pointer-events: none;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+body::after {
+    content: "";
+    position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.25);
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
 }
 
 body {
+    position: relative;
+    z-index: 0;
+
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('../images/jess-hand.jpg');
-    background-attachment: fixed;      /* Keeps the image static */
-    background-size: cover;            /* Ensures it covers the screen */
-    background-position: center;       /* Centers the image */
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -43,6 +57,9 @@ body {
 }
 
 .banner {
+    position: relative;
+    z-index: 2;
+
     margin: 0;
     display: flex;
     flex-direction: column;  /* Stack elements vertically */
@@ -66,6 +83,9 @@ body {
 }
 
 .home-content {
+    position: relative;
+    z-index: 3;
+
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
@@ -73,11 +93,11 @@ body {
     justify-content: center;
     text-align: center;
     color: var(--text-band);
-    z-index: 1; /* Ensure content is above the overlay */
+    z-index: 3; /* Ensure content is above the overlay */
 
 }
 
-.home-text h1, h2 {
+.home-text h1, .home-text h2 {
     font-weight: 100;
     font-size: 2rem;
     font-family: var(--heading-font);
@@ -92,15 +112,16 @@ body {
 }
 
 footer {
+    position: relative;
+    z-index: 2;
+
     text-align: center;
     padding: 1rem;
     background-color: var(--primary-band);
     color: var(--text-band);
-    /*position: fixed;*/
     width: 100%;
     bottom: 0;
     margin-top: auto;
-
     font-weight: 100;
     font-size: 1rem;
     font-family: var(--heading-font);
@@ -113,12 +134,12 @@ footer a {
 }
 
 @media (max-aspect-ratio: 3/4), (hover: none) and (pointer: coarse) {
-    body {
-        background-attachment: scroll;
+    body::before {
+        height: 100dvh; /*dvh help prevent mobile browser resizing to mess things up when scrolling*/
         background-position: center top;
     }
 
-    body::before {
+    body::after {
         inset: 0;
     }
 
