@@ -1,0 +1,115 @@
+:root {
+    /* Color variables */
+    --primary-band: #012623;
+    --primary-rgba: rgba(1, 38, 35, 0.3);
+    --brown-band: #A6896F;
+    --brown-rgba: rgba(166,137,111, 0.3);
+    --text-band: #FFFFFF;
+    --dark-navy-band: #013440;
+    --light-navy-band: #143F59; 
+    --light-navy-rgba: rgba(20, 63, 89, 0.3);
+    --light-navy-rgba-hover: rgba(20, 63, 89, 0.2);
+    --aqua-green-band: #244B34;
+    --aqua-green-rgba: rgba(36, 75, 52, 0.35);
+
+    /* Font variables */
+    --primary-font: 'Roboto', sans-serif;
+    --heading-font: 'Montserrat', sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/jess-hand.jpg');
+    background-attachment: fixed;      /* Keeps the image static */
+    background-size: cover;            /* Ensures it covers the screen */
+    background-position: center;       /* Centers the image */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.banner {
+    margin: 0;
+    display: flex;
+    flex-direction: column;  /* Stack elements vertically */
+    align-items: center; 
+    /*background-color: var(--primary-band);*/
+    background-color: transparent;
+    color: var(--text-band);
+}
+
+.name {
+    font-weight: 100;
+    font-size: 3.5rem;
+    font-family: "Whisper", cursive;
+    margin: 0.5rem 0.5rem;
+}
+
+.social-media img{
+    height: 3rem;
+    width: 3rem;
+    max-width: 100%;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-band);
+    z-index: 1; /* Ensure content is above the overlay */
+
+}
+
+.home-text h1, h2 {
+    font-weight: 100;
+    font-size: 2rem;
+    font-family: var(--heading-font);
+    margin: 0.5rem 0.5rem;
+}
+
+.home-logo img {
+    width: 45rem;
+    height: auto;
+    max-width: 100vw;
+    max-height: auto; 
+    margin: 1rem 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--primary-band);
+    color: var(--text-band);
+    /*position: fixed;*/
+    width: 100%;
+    bottom: 0;
+    margin-top: auto;
+
+    font-weight: 100;
+    font-size: 1rem;
+    font-family: var(--heading-font);
+}
+
+footer a {
+    color: var(--text-band);
+    text-decoration: none;
+    font-weight: bold;
+}
