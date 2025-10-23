@@ -17,6 +17,10 @@
     --heading-font: 'Montserrat', sans-serif;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body::before {
     content: "";
     position: fixed;
@@ -30,8 +34,6 @@ body::before {
     width: 100%;
     z-index: 0;
     pointer-events: none;
-    transform: translateZ(0);
-    will-change: transform;
 }
 
 body::after {
@@ -136,7 +138,7 @@ footer a {
 @media (max-aspect-ratio: 3/4), (hover: none) and (pointer: coarse) {
     body::before {
         background-image: none;
-        background-color: var(--light-navy-band);
+        background-color: var(--primary-band);
         height: 100vh;
     }
 
