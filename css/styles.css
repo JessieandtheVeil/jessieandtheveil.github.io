@@ -18,7 +18,7 @@
 }
 
 html, body {
-    overflow-x: hidden;
+    /*overflow-x: hidden; reintroduce this once website is finished as a safeguard*/
 }
 
 body::before {
@@ -118,7 +118,6 @@ footer {
     z-index: 2;
 
     text-align: center;
-    padding: 1rem;
     background-color: var(--primary-band);
     color: var(--text-band);
     width: 100%;
