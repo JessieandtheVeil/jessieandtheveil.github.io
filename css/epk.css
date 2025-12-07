@@ -36,17 +36,18 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('../images/jess-hand.jpg');
-    background-attachment: fixed;      /* Keeps the image static */
-    background-size: cover;            /* Ensures it covers the screen */
-    background-position: center;       /* Centers the image */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     overflow-x: hidden;
 }
+
 
 .banner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
+    background-color: var(--dark-navy-band);
     color: var(--text-band);
     padding: 1.5rem 7rem;
     position: fixed;
@@ -55,7 +56,6 @@ body {
     z-index: 1000;
     box-sizing: border-box;
     overflow-x: hidden;
-    transition: background-color 0.1s linear;
 }
 
 .banner-logo-container {
@@ -148,79 +148,9 @@ section {
     text-align: center;
 }
 
-#home {
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7rem 7rem;
-}
-
-#about {
-    background-color: var(--aqua-green-rgba);
-    color: var(--text-band);
-    padding: 3rem 7rem;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.about-text {
-    flex: 1;
-    text-align: left;
-    padding-right: 1.5rem;
-    font-weight: 100;
-}
-
-.about-text p:nth-of-type(1) {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.about-text p:nth-of-type(2) {
-    font-size: 1.3rem;
-    line-height: 1.6rem;
-}
-
-.about-image {
-    flex: 1;
-    width: 30vw;
-    height: auto;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 0.5rem;
-}
-
-#contact {
-    background-color: var(--light-navy-rgba);
-    color: var(--text-band);
-    padding: 1.5rem 7rem;
-    font-weight: 100;
-    font-size: 1.3rem;
-    text-align: center;
-}
-
-#contact p {
-    margin: 0 0 0.2rem 0; /* top right bottom left — reduce bottom gap */
-    line-height: 1.4;     /* optional: tighten line spacing */
-}
-
-#contact a {
-    color: var(--text-band);
-    text-decoration: none;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-    color: var(--text-band);
-}
-
 h1 {
     color: var(--text-band);
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 100;
 }
 
@@ -232,7 +162,8 @@ h2 {
 
 footer {
     text-align: center;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     background-color: var(--primary-band);
     color: var(--text-band);
     width: 100%;
@@ -266,40 +197,6 @@ footer a {
     .banner {
         padding: 1.5rem 2rem;
     }
-
-    #home {
-        flex-direction: column;
-        padding: 1.5rem 2rem;
-        text-align: center;
-    }
-
-    .home-name {
-        font-size: 10vw;
-    }
-
-    .home-logo img {
-        width : 80vw;
-    }
-
-    #about {
-        flex-direction: column;
-        padding: 1.5rem 2rem;
-        text-align: center;
-    }
-
-    .about-image {
-        width: 80vw;
-        margin-top: 1.5rem;
-    }
-
-    .about-text {
-        text-align: center;
-    }
-
-    #contact {
-        padding: 1.5rem 2rem;
-    }
-
 }
 
 /* Mobile Only */
@@ -307,6 +204,4 @@ footer a {
     .banner-name {
         display: none;
     }
-
-
 }
