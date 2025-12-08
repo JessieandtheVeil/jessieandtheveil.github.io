@@ -159,6 +159,56 @@ h2 {
     font-weight: 100;
 }
 
+
+#epk {
+    background-color: var(--light-navy-rgba);
+    color: var(--text-band);
+    padding: 3rem 7rem;
+}
+
+.epk-bios {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10rem;
+}
+
+.english-bio, .irish-bio {
+    flex: 1;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.newspaper-review {
+    font-size: 1.9rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    color: var(--text-band);
+}
+
+.newspaper-review a {
+    color: var(--text-band);
+    text-decoration: none;
+}
+
+.newspaper-review a:hover {
+    text-decoration: underline;
+}
+
+.epk-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.epk-images img {
+    width: 100%;
+}
+
+
+
 footer {
     text-align: center;
     padding-top: 1rem;
@@ -187,20 +237,56 @@ footer a {
 /* Mobile or Desktop-Very-Narrow */
 /* Most styling changes will go in here */
 @media (max-aspect-ratio: 1.2/1), ((hover: none) and (pointer:coarse)) {
+
+    .banner {
+        padding: 1.5rem 2rem;
+    }
+
+    
+    #epk {
+        background-color: var(--light-navy-rgba);
+        color: var(--text-band);
+        padding: 1.5rem 2rem;
+    }
+
+    .epk-bios {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+
+    .epk-images {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Only */
+@media (max-aspect-ratio: 1/1), ((hover: none) and (pointer:coarse)) {
+
     body::before { /*perhaps move this to a lower max-width*/
         background-image: none;
         background-color: var(--primary-band);
         height: 100vh;
     }
 
-    .banner {
-        padding: 1.5rem 2rem;
+    main {
+        margin-top: 4.5rem;
+        padding: 0px;
     }
-}
 
-/* Mobile Only */
-@media (max-aspect-ratio: 1/1), ((hover: none) and (pointer:coarse)) {
     .banner-name {
         display: none;
+    }
+
+    .banner {
+        padding: 0.75rem 0.75rem;
+    }
+
+    .banner-logo {
+        height: 3rem;
+    }
+
+    .banner-social-media img {
+        height: 2rem;
     }
 }
