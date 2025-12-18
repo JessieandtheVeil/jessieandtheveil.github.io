@@ -485,6 +485,11 @@ footer a {
         text-align: center;
     }
 
+    .song-text {
+        text-align: center;
+        padding-left: 0;
+    }
+
     .song-image {
         width: 80vw;
         margin-top: 1.5rem;
