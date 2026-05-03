@@ -1,7 +1,6 @@
 function hexToRgb(hex) {
-  hex = hex.replace(/^#/, ""); // remove "#"
+  hex = hex.replace(/^#/, "");
   if (hex.length === 3) {
-    // e.g. #000 -> #000000
     hex = hex.split("").map(c => c + c).join("");
   }
   const bigint = parseInt(hex, 16);
@@ -12,25 +11,22 @@ function hexToRgb(hex) {
   };
 }
 
-window.addEventListener("scroll", function () {
-  const scrollTop = window.scrollY || document.documentElement.scrollTop;  const banner = document.querySelector(".banner");
+function updateBannerFade() {
   const scrollY = window.scrollY;
-
-  // how many pixels it takes to fully fade in
+  const banner = document.querySelector(".banner");
   const fadePoint = 200;
   const maxBannerOpacity = 1;
-
-  // calculate opacity between 0 and 1
+  
   let opacity = Math.min(scrollY / fadePoint, 1) * maxBannerOpacity;
-
-  // get the --primary-band value from CSS
+  
   const rootStyles = getComputedStyle(document.documentElement);
   const primaryBandHex = rootStyles.getPropertyValue("--dark-navy-band").trim();
-
-  // convert to rgb
   const { r, g, b } = hexToRgb(primaryBandHex);
+  
+  banner.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+}
 
-  // apply with opacity
-  banner.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${opacity})`;    
 
-});
+window.addEventListener("scroll", updateBannerFade);
+document.addEventListener("DOMContentLoaded", updateBannerFade);
+document.addEventListener("visibilitychange", updateBannerFade);
