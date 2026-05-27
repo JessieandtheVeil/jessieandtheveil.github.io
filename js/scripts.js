@@ -16,8 +16,10 @@ function updateBannerFade() {
   const banner = document.querySelector(".banner");
   const fadePoint = 200;
   const maxBannerOpacity = 1;
+  const isEpkPage = window.location.pathname.includes('epk.html');
+  const baseOpacity = isEpkPage ? 0.3 : 0;
   
-  let opacity = Math.min(scrollY / fadePoint, 1) * maxBannerOpacity;
+  let opacity = Math.min((scrollY / fadePoint) + baseOpacity, 1) * maxBannerOpacity;
   
   const rootStyles = getComputedStyle(document.documentElement);
   const primaryBandHex = rootStyles.getPropertyValue("--dark-navy-band").trim();

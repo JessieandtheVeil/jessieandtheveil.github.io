@@ -132,7 +132,7 @@ body {
 }
 
 main {
-    margin-top: 9rem; /*1.5 + 6 + 1.5 -> space for header*/
+    margin-top: 9.25rem; /*1.5 + 6 + 1.5 -> space for header*/
     padding: 0px;
 }
 
